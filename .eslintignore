@@ -1,0 +1,6 @@
+build/*
+public/*
+.eslintrc.js
+App.test.tsx
+serviceWorker.ts
+setupTests.ts
