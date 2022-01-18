@@ -29,5 +29,6 @@ module.exports = {
       },
     ],
     'import/extensions': 'off',
+    'react/function-component-definition': 'off',
   },
 };
