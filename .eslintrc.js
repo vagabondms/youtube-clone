@@ -29,6 +29,8 @@ module.exports = {
       },
     ],
     'import/extensions': 'off',
+    'import/no-extraneous-dependencies': 'off',
     'react/function-component-definition': 'off',
+    'global-require': 'off',
   },
 };

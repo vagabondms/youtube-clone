@@ -1,5 +1,5 @@
-import Header from '@components/Header';
-import style from './App.module.css';
+import Header from '@components/Header/Header';
+import style from '@mstyles/App.module.css';
 
 function App() {
   return (
