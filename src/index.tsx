@@ -1,6 +1,6 @@
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
-import '@styles/root.css';
+import './root.scss';
 import { Provider } from 'react-redux';
 import * as serviceWorker from '@src/serviceWorker';
 import { store } from '@store/store';

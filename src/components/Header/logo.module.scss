@@ -1,0 +1,13 @@
+.logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 800;
+  padding: 0 16px;
+}
+
+.logo > p {
+  color: white;
+  padding-left: 2px;
+  font-size: 1.2rem;
+}

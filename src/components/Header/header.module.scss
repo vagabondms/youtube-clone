@@ -1,0 +1,36 @@
+.header {
+  width: 100vw;
+  height: 56px;
+  padding: 0 16px;
+  background-color: var(--color-main);
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  padding: 0;
+  background-color: transparent;
+}
+
+@media screen and (max-width: 655px) {
+  .header {
+    padding: 0 8px;
+  }
+}
+
+.middle {
+  flex: 0 1 728px;
+}
+
+.end {
+  width: 204px;
+  min-width: 204px;
+  padding-left: 20px;
+}
+
+@media screen and (max-width: 655px) {
+  .end {
+    padding-left: 10px;
+  }
+}
