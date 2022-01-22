@@ -1,8 +1,11 @@
+@use 'src/styles/colors.scss' as colors;
+@use 'src/styles/break-points.scss' as bp;
+@use 'src/styles/spacing.scss' as spacing;
 .header {
   width: 100vw;
   height: 56px;
-  padding: 0 16px;
-  background-color: var(--color-main);
+  padding: 0 spacing.$padding-large;
+  background-color: colors.$black;
   position: fixed;
   display: flex;
   justify-content: space-between;
@@ -13,9 +16,9 @@
   background-color: transparent;
 }
 
-@media screen and (max-width: 655px) {
+@media screen and (max-width: bp.$small) {
   .header {
-    padding: 0 8px;
+    padding: 0 spacing.$padding-small;
   }
 }
 
@@ -26,11 +29,11 @@
 .end {
   width: 204px;
   min-width: 204px;
-  padding-left: 20px;
+  padding-left: spacing.$padding-large;
 }
 
-@media screen and (max-width: 655px) {
+@media screen and (max-width: bp.$small) {
   .end {
-    padding-left: 10px;
+    padding-left: spacing.$padding-small;
   }
 }

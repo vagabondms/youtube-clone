@@ -1,8 +1,11 @@
+@use 'src/styles/break-points.scss' as bp;
+
 .search {
   flex: 1 0;
   display: flex;
   flex-wrap: nowrap;
 }
+
 .input {
   width: 100%;
 }
@@ -18,10 +21,15 @@
   display: none;
 }
 
-@media screen and (max-width: 655px) {
+@media screen and (max-width: bp.$small) {
   .search {
     justify-content: flex-end;
   }
+
+  .searchBtn {
+    background: transparent;
+  }
+
   .input {
     display: none;
   }

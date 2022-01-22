@@ -1,9 +1,11 @@
+@use 'src/styles/spacing.scss' as spacing;
+
 .logo {
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-weight: 800;
-  padding: 0 16px;
+  padding: 0 spacing.$padding-small;
 }
 
 .logo > p {
