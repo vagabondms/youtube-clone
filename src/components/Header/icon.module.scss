@@ -1,6 +1,5 @@
 @use 'src/styles/spacing.scss' as spacing;
 @use 'src/styles/colors.scss' as colors;
 .icon {
-  padding: spacing.$padding-small;
   color: colors.$white;
 }

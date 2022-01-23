@@ -5,8 +5,12 @@ import {
 
 import styles from './icon.module.scss';
 
-const Icon = ({ icon, ...rest }: FontAwesomeIconProps) => (
-  <div className={styles.icon}>
+interface IconProps extends FontAwesomeIconProps {
+  padding?: number;
+}
+
+const Icon = ({ icon, padding = 8, ...rest }: IconProps) => (
+  <div className={styles.icon} style={{ padding }}>
     <FontAwesomeIcon icon={icon} size="lg" {...rest} />
   </div>
 );

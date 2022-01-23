@@ -1,0 +1,15 @@
+@use 'src/styles/spacing.scss' as spacing;
+
+.menuItem {
+  width: 100%;
+  height: 40px;
+  padding: 0 spacing.$padding-xlarge;
+  display: flex;
+  align-items: center;
+}
+
+.text {
+  margin-left: spacing.$margin-xlarge;
+  color: white;
+  font-size: 0.8rem;
+}

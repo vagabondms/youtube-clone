@@ -1,0 +1,16 @@
+@use 'src/styles/spacing.scss' as spacing;
+@use 'src/styles/colors.scss' as colors;
+
+.title {
+  width: 100%;
+  height: 40px;
+  padding: 0 spacing.$padding-xlarge;
+  display: flex;
+  align-items: center;
+}
+
+.text {
+  color: white;
+  font-size: 0.8rem;
+  color: colors.$light-grey;
+}

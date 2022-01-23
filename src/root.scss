@@ -24,3 +24,23 @@ button {
   border: none;
   cursor: pointer;
 }
+
+a {
+  text-decoration: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: #202020;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #717171;
+  border-radius: 10px;
+}

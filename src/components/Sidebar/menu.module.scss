@@ -1,0 +1,10 @@
+@use 'src/styles/colors.scss' as colors;
+
+.menu {
+  background-color: colors.$black;
+  height: calc(100vh - 56px);
+  overflow-y: scroll;
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+}

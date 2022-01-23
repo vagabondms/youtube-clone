@@ -7,8 +7,12 @@
   padding: 0 spacing.$padding-large;
   background-color: colors.$black;
   position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: space-between;
+  z-index: 1;
 }
 
 .button {
@@ -34,6 +38,9 @@
 }
 
 @media screen and (max-width: bp.$small) {
+  .middle {
+    padding-left: 10px;
+  }
   .end {
     padding-left: spacing.$padding-small;
   }
