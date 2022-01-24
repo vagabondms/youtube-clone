@@ -1,4 +1,4 @@
-import styles from './spacer.module.scss';
+import styles from './Spacer.module.scss';
 
 type SpacerProps = {
   line?: boolean;

@@ -1,5 +1,7 @@
-import styles from './content.module.scss';
+import styles from './Content.module.scss';
 
-const Content = () => <div className={styles.content}>content</div>;
+const Content = ({ children }: any) => (
+  <main className={styles.content}>{children}</main>
+);
 
 export default Content;

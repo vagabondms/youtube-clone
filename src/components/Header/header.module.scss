@@ -13,17 +13,12 @@
   display: flex;
   justify-content: space-between;
   z-index: 1;
+  border-bottom: 1px solid colors.$light-grey-dimmed;
 }
 
 .button {
   padding: 0;
   background-color: transparent;
-}
-
-@media screen and (max-width: bp.$small) {
-  .header {
-    padding: 0 spacing.$padding-small;
-  }
 }
 
 .middle {
@@ -38,6 +33,10 @@
 }
 
 @media screen and (max-width: bp.$small) {
+  .header {
+    padding: 0 spacing.$padding-small;
+  }
+
   .middle {
     padding-left: 10px;
   }

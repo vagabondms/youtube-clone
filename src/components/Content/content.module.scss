@@ -1,4 +1,18 @@
+@use 'src/styles/break-points.scss' as bp;
+@use 'src/styles/colors.scss' as colors;
+
 .content {
   margin-top: 56px;
-  margin-left: 250px;
+  margin-left: 240px;
+  background-color: colors.$dark-black;
+  height: 300vh;
+  overflow-y: scroll;
+
+  @media screen and (max-width: bp.$large) {
+    margin-left: 74px;
+  }
+
+  @media screen and (max-width: bp.$middle) {
+    margin-left: 0px;
+  }
 }

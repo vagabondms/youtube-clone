@@ -8,7 +8,9 @@ import {
   faCog,
   faCompass,
   faDownload,
+  faExclamationCircle,
   faFilm,
+  faFlag,
   faGamepad,
   faHeadset,
   faHistory,
@@ -16,6 +18,7 @@ import {
   faLightbulb,
   faMusic,
   faPlayCircle,
+  faQuestionCircle,
   faTrophy,
 } from '@fortawesome/free-solid-svg-icons';
 import Spacer from './Spacer';
@@ -50,9 +53,9 @@ const Menu = () => (
     <MenuItem icon={faTrophy} text="스포츠" />
     <Spacer height={40} line />
     <MenuItem icon={faCog} text="설정" />
-    <MenuItem icon={faCog} text="신고 기록" />
-    <MenuItem icon={faCog} text="고객센터" />
-    <MenuItem icon={faCog} text="의견 보내기" />
+    <MenuItem icon={faFlag} text="신고 기록" />
+    <MenuItem icon={faQuestionCircle} text="고객센터" />
+    <MenuItem icon={faExclamationCircle} text="의견 보내기" />
     <Spacer height={40} line />
   </menu>
 );

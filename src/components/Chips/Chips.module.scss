@@ -1,0 +1,8 @@
+@use 'src/styles/colors' as colors;
+.chips {
+  position: fixed;
+  height: 54px;
+  width: 100%;
+  background-color: colors.$black;
+  border-bottom: 1px solid colors.$light-grey-dimmed;
+}

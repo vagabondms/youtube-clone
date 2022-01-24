@@ -1,6 +1,14 @@
+@use 'src/styles/break-points.scss' as bp;
+
 .sidebar {
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 240px;
   height: 100vh;
+}
+
+@media screen and (max-width: bp.$large) {
+  .sidebar {
+    display: none;
+  }
 }

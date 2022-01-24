@@ -7,7 +7,7 @@ import {
 
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import Icon from './Icon';
-import styles from './header.module.scss';
+import styles from './Header.module.scss';
 import InnerContainer from './InnerContainer';
 import Logo from './Logo';
 import Search from './Search';
