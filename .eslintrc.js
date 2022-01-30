@@ -40,5 +40,9 @@ module.exports = {
     'react/prop-types': 'off',
     'react/require-default-props': 'off',
     'react/jsx-no-duplicate-props': 'off',
+    'object-curly-newline': 'off',
+    'operator-linebreak': 'off',
+    'implicit-arrow-linebreak': 'off',
+    'function-paren-newline': 'off',
   },
 };

@@ -1,0 +1,24 @@
+@use 'src/styles/colors.scss' as colors;
+@use 'src/styles/sizes.scss' as sizes;
+.chip {
+  height: 30px;
+  min-width: 12px;
+  background-color: #373737;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  border: 1px solid #4b4b4b;
+  padding: 12px;
+  margin: 12px 6px;
+
+  color: colors.$white;
+  font-size: sizes.$font-size-middle;
+
+  &:first-child {
+    margin-left: 24px;
+  }
+  &:last-child {
+    margin-right: 24px;
+  }
+}

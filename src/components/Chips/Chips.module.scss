@@ -1,8 +1,75 @@
 @use 'src/styles/colors' as colors;
+@use 'src/styles/sizes' as sizes;
 .chips {
   position: fixed;
-  height: 54px;
-  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 56px;
+  width: inherit;
   background-color: colors.$black;
   border-bottom: 1px solid colors.$light-grey-dimmed;
+  will-change: transform;
+}
+
+.chipsView {
+  position: relative;
+  overflow-x: hidden;
+  white-space: nowrap;
+}
+
+.chipsContainer {
+  display: inline-block;
+  transition-duration: 0.15s;
+  transition-timing-function: cubic-bezier(0.05, 0, 0, 1);
+}
+
+.left,
+.right {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  top: 0;
+  font-size: sizes.$font-size-small;
+  font-weight: bold;
+  z-index: 2000;
+}
+
+.left::after,
+.right::before {
+  height: 100%;
+  width: 50px;
+  content: '';
+  pointer-events: none;
+}
+
+.left {
+  left: 0;
+
+  &::after {
+    background: linear-gradient(
+      to right,
+      colors.$black 20%,
+      rgba(0, 0, 0, 0) 80%
+    );
+  }
+}
+.right {
+  right: 0;
+
+  &::before {
+    background: linear-gradient(
+      to left,
+      colors.$black 20%,
+      rgba(0, 0, 0, 0) 80%
+    );
+  }
+}
+
+.icon {
+  width: 50px;
+  height: 100%;
+  text-align: center;
+  background: none;
+  background-color: colors.$black;
 }
