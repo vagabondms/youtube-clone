@@ -6,6 +6,7 @@
   width: 74px;
   height: 100vh;
   background-color: colors.$black;
+  margin-top: 56px;
 
   @media screen and (min-width: bp.$large) {
     display: none;

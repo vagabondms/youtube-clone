@@ -1,6 +1,6 @@
 import Icon from '@components/Header/Icon';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import styles from './menuitem.module.scss';
+import styles from './Menuitem.module.scss';
 
 type MenuItemProps = {
   text: string;

@@ -1,10 +1,8 @@
-import Spacer from '@components/Sidebar/Spacer';
 import Menu from '@components/SidebarMini/Menu';
-import style from './sidebarMini.module.scss';
+import style from './SidebarMini.module.scss';
 
 const SidebarMini = () => (
   <aside className={style.sidebarMini}>
-    <Spacer height={56} />
     <Menu />
   </aside>
 );

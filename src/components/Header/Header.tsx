@@ -12,32 +12,42 @@ import InnerContainer from './InnerContainer';
 import Logo from './Logo';
 import Search from './Search';
 
-const Header = () => (
-  <header className={styles.header}>
-    <InnerContainer>
-      <button className={styles.button} type="button">
-        <Icon icon={faBars} />
-      </button>
-      <Logo />
-    </InnerContainer>
-    <InnerContainer className={styles.middle}>
-      <Search />
-    </InnerContainer>
-    <InnerContainer className={styles.end}>
-      <button className={styles.button} type="button">
-        <Icon icon={faVideo} />
-      </button>
-      <button className={styles.button} type="button">
-        <Icon icon={faTh} />
-      </button>
-      <button className={styles.button} type="button">
-        <Icon icon={faBell} />
-      </button>
-      <button className={styles.button} type="button">
-        <Icon icon={faGithub} size="2x" />
-      </button>
-    </InnerContainer>
-  </header>
-);
+const Header = () => {
+  const handleBarsClick = () => {};
+
+  console.log(window.innerWidth);
+
+  return (
+    <header className={styles.header}>
+      <InnerContainer>
+        <button
+          className={styles.button}
+          onClick={handleBarsClick}
+          type="button"
+        >
+          <Icon icon={faBars} />
+        </button>
+        <Logo />
+      </InnerContainer>
+      <InnerContainer className={styles.middle}>
+        <Search />
+      </InnerContainer>
+      <InnerContainer className={styles.end}>
+        <button className={styles.button} type="button">
+          <Icon icon={faVideo} />
+        </button>
+        <button className={styles.button} type="button">
+          <Icon icon={faTh} />
+        </button>
+        <button className={styles.button} type="button">
+          <Icon icon={faBell} />
+        </button>
+        <button className={styles.button} type="button">
+          <Icon icon={faGithub} size="2x" />
+        </button>
+      </InnerContainer>
+    </header>
+  );
+};
 
 export default Header;
