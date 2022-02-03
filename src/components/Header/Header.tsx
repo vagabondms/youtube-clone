@@ -15,8 +15,6 @@ import Search from './Search';
 const Header = () => {
   const handleBarsClick = () => {};
 
-  console.log(window.innerWidth);
-
   return (
     <header className={styles.header}>
       <InnerContainer>

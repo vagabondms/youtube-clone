@@ -44,5 +44,6 @@ module.exports = {
     'operator-linebreak': 'off',
     'implicit-arrow-linebreak': 'off',
     'function-paren-newline': 'off',
+    'no-param-reassign': 'off',
   },
 };

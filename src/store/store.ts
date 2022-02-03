@@ -1,7 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
+import windowReducer from './window';
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    window: windowReducer,
+  },
 });
 
 export type AppDispatch = typeof store.dispatch;
