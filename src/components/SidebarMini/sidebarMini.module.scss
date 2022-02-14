@@ -3,15 +3,16 @@
 .sidebarMini {
   position: fixed;
   top: 0;
-  width: 74px;
+
   height: 100vh;
   background-color: colors.$black;
   margin-top: 56px;
+  visibility: hidden;
+}
 
-  @media screen and (min-width: bp.$large) {
-    display: none;
-  }
-  @media screen and (max-width: bp.$middle) {
-    display: none;
+:global(.sidebar-mini) {
+  .sidebarMini {
+    width: 74px;
+    visibility: visible;
   }
 }

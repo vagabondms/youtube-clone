@@ -5,47 +5,60 @@ import SidebarMini from '@components/SidebarMini/SidebarMini';
 import Chips from '@components/Chips/Chips';
 
 import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { updateSize } from '@store/window';
 import style from './App.module.scss';
 
 function App() {
-  const dispatch = useDispatch();
+  const [appClass, setAppClass] = useState<string>('');
+  const [showSidebar, setSidebar] = useState<boolean>(false);
 
-  // ! need to refactor
   useEffect(() => {
-    const resizeListener = () => {
+    window.addEventListener('resize', () => {
       const width = window.innerWidth;
-      if (width <= 655) {
-        dispatch(updateSize('SMALL'));
-      } else if (width <= 810) {
-        dispatch(updateSize('MEDIUM'));
+      if (width >= 1320) {
+        setAppClass('sidebar');
+        setSidebar(false);
+      } else if (width < 1320 && width >= 810) {
+        setAppClass('sidebar-mini');
       } else {
-        dispatch(updateSize('LARGE'));
+        setAppClass('');
       }
-    };
-    window.addEventListener('resize', resizeListener);
-    return () => {
-      window.removeEventListener('resize', resizeListener);
-    };
+    });
   }, []);
 
-  const [
-    isSidebarOpen,
-    // , setIsSidebarOpen
-  ] = useState<boolean>(false);
-  const [
-    isSidebarMiniOpen,
-    // setIsSidebarMiniOpen
-  ] = useState<boolean>(true);
+  useEffect(() => {
+    const width = window.innerWidth;
+    if (width >= 1320) {
+      setAppClass('sidebar');
+    } else if (width < 1320 && width >= 810) {
+      setAppClass('sidebar-mini');
+    } else {
+      setAppClass('');
+    }
+  }, []);
+
+  const handleAppClass = () => {
+    const width = window.innerWidth;
+    if (width >= 1320) {
+      setAppClass((prev) => (prev === 'sidebar' ? 'sidebar-mini' : 'sidebar'));
+    } else if (width < 1320) {
+      setSidebar((prev) => !prev);
+    }
+  };
+
   return (
-    <div className={style.app}>
+    <div id="App" className={`${style.app} ${appClass}`}>
       <Content>
-        <Header />
+        <Header handleAppClass={handleAppClass} />
         <Chips />
       </Content>
-      <Sidebar open={isSidebarOpen} />
-      {isSidebarMiniOpen && <SidebarMini />}
+      <Sidebar
+        style={
+          showSidebar
+            ? { transform: 'translate(0,0)', visibility: 'visible' }
+            : {}
+        }
+      />
+      <SidebarMini />
     </div>
   );
 }

@@ -12,8 +12,14 @@ import InnerContainer from './InnerContainer';
 import Logo from './Logo';
 import Search from './Search';
 
-const Header = () => {
-  const handleBarsClick = () => {};
+type HeaderProps = {
+  handleAppClass(): void;
+};
+
+const Header = ({ handleAppClass }: HeaderProps) => {
+  const handleBarsClick = () => {
+    handleAppClass();
+  };
 
   return (
     <header className={styles.header}>

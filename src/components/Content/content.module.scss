@@ -3,19 +3,24 @@
 
 .content {
   margin-top: 56px;
-  margin-left: 240px;
+
   background-color: colors.$dark-black;
   height: 300vh;
-  width: calc(100% - 240px);
-  overflow-y: scroll;
 
-  @media screen and (max-width: bp.$large) {
+  overflow-y: scroll;
+  width: 100%;
+}
+
+:global(.sidebar) {
+  .content {
+    margin-left: 240px;
+    width: calc(100% - 240px);
+  }
+}
+
+:global(.sidebar-mini) {
+  .content {
     margin-left: 74px;
     width: calc(100% - 74px);
-  }
-
-  @media screen and (max-width: bp.$middle) {
-    margin-left: 0px;
-    width: 100%;
   }
 }
