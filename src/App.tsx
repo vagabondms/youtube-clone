@@ -5,43 +5,57 @@ import SidebarMini from '@components/SidebarMini/SidebarMini';
 import Chips from '@components/Chips/Chips';
 
 import { useEffect, useState } from 'react';
+import Videos from '@components/Videos';
 import style from './App.module.scss';
 
 function App() {
   const [appClass, setAppClass] = useState<string>('');
-  const [showSidebar, setSidebar] = useState<boolean>(false);
+  const [appClassLarge, setAppClassLarge] = useState<string>('sidebar-visible');
+  const [sidebarOpened, setSidebarOpened] = useState<boolean>(false);
 
   useEffect(() => {
-    window.addEventListener('resize', () => {
-      const width = window.innerWidth;
-      if (width >= 1320) {
-        setAppClass('sidebar');
-        setSidebar(false);
-      } else if (width < 1320 && width >= 810) {
-        setAppClass('sidebar-mini');
-      } else {
-        setAppClass('');
-      }
-    });
-  }, []);
-
-  useEffect(() => {
-    const width = window.innerWidth;
-    if (width >= 1320) {
-      setAppClass('sidebar');
-    } else if (width < 1320 && width >= 810) {
-      setAppClass('sidebar-mini');
+    const windowWidth = window.innerWidth;
+    if (windowWidth > 1320) {
+      setAppClass('sidebar-visible');
+    } else if (windowWidth <= 1320 && windowWidth > 810) {
+      setAppClass('sidebar-mini-visible');
     } else {
       setAppClass('');
     }
   }, []);
 
+  useEffect(() => {
+    window.addEventListener('resize', () => {
+      const windowWidth = window.innerWidth;
+      if (windowWidth > 1320) {
+        setAppClass(appClassLarge);
+        setSidebarOpened(false);
+      } else if (windowWidth <= 1320 && windowWidth > 810) {
+        setAppClass('sidebar-mini-visible');
+      } else if (windowWidth < 655) {
+        setAppClass('');
+      }
+    });
+  }, [appClassLarge]);
+
   const handleAppClass = () => {
-    const width = window.innerWidth;
-    if (width >= 1320) {
-      setAppClass((prev) => (prev === 'sidebar' ? 'sidebar-mini' : 'sidebar'));
-    } else if (width < 1320) {
-      setSidebar((prev) => !prev);
+    const windowWidth = window.innerWidth;
+    if (windowWidth > 1320) {
+      const currentAppClass =
+        appClass === 'sidebar-visible'
+          ? 'sidebar-mini-visible'
+          : 'sidebar-visible';
+      setAppClass(currentAppClass);
+      setAppClassLarge(currentAppClass);
+    } else {
+      setSidebarOpened((prev) => {
+        if (!prev) {
+          document.body.style.overflow = 'hidden';
+        } else {
+          document.body.style.overflow = 'scroll';
+        }
+        return !prev;
+      });
     }
   };
 
@@ -50,11 +64,14 @@ function App() {
       <Content>
         <Header handleAppClass={handleAppClass} />
         <Chips />
+        <Videos />
       </Content>
       <Sidebar
         style={
-          showSidebar
-            ? { transform: 'translate(0,0)', visibility: 'visible' }
+          sidebarOpened
+            ? {
+                transform: 'translateX(0px)',
+              }
             : {}
         }
       />

@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ['airbnb', 'plugin:react/recommended'],
+  extends: ['airbnb', 'plugin:react/recommended', 'prettier'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -45,5 +45,6 @@ module.exports = {
     'implicit-arrow-linebreak': 'off',
     'function-paren-newline': 'off',
     'no-param-reassign': 'off',
+    'no-confusing-arrow': 'off',
   },
 };

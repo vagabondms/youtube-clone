@@ -3,22 +3,19 @@
 
 .content {
   margin-top: 56px;
-
   background-color: colors.$dark-black;
-  height: 300vh;
-
   overflow-y: scroll;
   width: 100%;
 }
 
-:global(.sidebar) {
+:global(.sidebar-visible) {
   .content {
     margin-left: 240px;
     width: calc(100% - 240px);
   }
 }
 
-:global(.sidebar-mini) {
+:global(.sidebar-mini-visible) {
   .content {
     margin-left: 74px;
     width: calc(100% - 74px);

@@ -3,16 +3,15 @@
 .sidebarMini {
   position: fixed;
   top: 0;
-
   height: 100vh;
   background-color: colors.$black;
   margin-top: 56px;
   visibility: hidden;
+  width: 74px;
 }
 
-:global(.sidebar-mini) {
+:global(.sidebar-mini-visible) {
   .sidebarMini {
-    width: 74px;
     visibility: visible;
   }
 }

@@ -1,18 +1,21 @@
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 import './root.scss';
-import { Provider } from 'react-redux';
+import axios from 'axios';
+
 import * as serviceWorker from '@src/serviceWorker';
-import { store } from '@store/store';
+
 import App from '@src/App';
 
 ReactDOM.render(
   <StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
+    <App />
   </StrictMode>,
   document.getElementById('root'),
 );
 
 serviceWorker.unregister();
+
+axios.defaults.baseURL = process.env.REACT_APP_URL;
+axios.defaults.params = {};
+axios.defaults.params.key = process.env.REACT_APP_KEY;
