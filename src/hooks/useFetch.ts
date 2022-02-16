@@ -11,7 +11,7 @@ const useFetch = <T>(props: AxiosRequestConfig): [T | null] => {
 
   useEffect(() => {
     fetchData(props);
-  }, []);
+  }, [props.url]);
 
   return [data];
 };

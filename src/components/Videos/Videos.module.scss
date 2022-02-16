@@ -1,3 +1,27 @@
+@use 'src/styles/break-points.scss' as bp;
+.wrapper {
+  text-align: center;
+}
 .videos {
+  display: grid;
+
+  margin: auto;
   margin-top: 56px;
+  max-width: 1500px;
+
+  @media screen and (min-width: 1144px) {
+    grid-template-columns: repeat(4, minmax(100px, 25%));
+  }
+
+  @media screen and (max-width: 1144px) {
+    grid-template-columns: repeat(3, minmax(100px, 33%));
+  }
+
+  @media screen and (max-width: 888px) {
+    grid-template-columns: repeat(2, 50%);
+  }
+
+  @media screen and (max-width: 510px) {
+    grid-template-columns: repeat(1, 100%);
+  }
 }
