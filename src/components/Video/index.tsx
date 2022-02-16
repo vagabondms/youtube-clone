@@ -1,24 +1,27 @@
 import { VideoInfo } from '@components/Videos';
+import { Link } from 'react-router-dom';
 
 import styles from './Video.module.scss';
 
 const index = ({
+  id,
   snippet: {
     title,
     thumbnails: {
       medium: { url },
     },
+    channelTitle,
   },
 }: VideoInfo) => (
-  <li>
+  <Link to={`/watch?id=${id}`}>
     <div className={styles.video}>
       <img className={styles.img} src={url} alt="thumbnail" />
-
-      <div>
-        <h3>{title}</h3>
+      <div className={styles.details}>
+        <div className={styles.title}>{title}</div>
+        <div className={styles.channelTitle}>{channelTitle}</div>
       </div>
     </div>
-  </li>
+  </Link>
 );
 
 export default index;

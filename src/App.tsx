@@ -2,11 +2,13 @@ import Header from '@components/Header/Header';
 import Content from '@components/Content/Content';
 import Sidebar from '@components/Sidebar/Sidebar';
 import SidebarMini from '@components/SidebarMini/SidebarMini';
-import Chips from '@components/Chips/Chips';
 
 import { useEffect, useState } from 'react';
-import Videos from '@components/Videos';
+
+import { Route, Routes } from 'react-router-dom';
 import style from './App.module.scss';
+import Main from './pages/Main';
+import Watch from './pages/Watch';
 
 function App() {
   const [appClass, setAppClass] = useState<string>('');
@@ -69,8 +71,10 @@ function App() {
     <div id="App" className={`${style.app} ${appClass}`}>
       <Content>
         <Header handleAppClass={handleAppClass} />
-        <Chips />
-        <Videos />
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/watch" element={<Watch />} />
+        </Routes>
       </Content>
       <Sidebar
         style={

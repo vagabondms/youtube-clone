@@ -18,6 +18,7 @@ type Thumbnails = {
 type VideoSnippet = {
   title: string;
   thumbnails: Thumbnails;
+  channelTitle: string;
 };
 
 export type VideoInfo = {

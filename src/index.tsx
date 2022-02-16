@@ -2,14 +2,16 @@ import { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 import './root.scss';
 import axios from 'axios';
-
+import { BrowserRouter } from 'react-router-dom';
 import * as serviceWorker from '@src/serviceWorker';
 
 import App from '@src/App';
 
 ReactDOM.render(
   <StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </StrictMode>,
   document.getElementById('root'),
 );
