@@ -28,11 +28,13 @@ function App() {
     window.addEventListener('resize', () => {
       const windowWidth = window.innerWidth;
       if (windowWidth > 1320) {
-        setAppClass(appClassLarge);
+        if (appClass !== appClassLarge) {
+          setAppClass(appClassLarge);
+        }
         setSidebarOpened(false);
       } else if (windowWidth <= 1320 && windowWidth > 810) {
         setAppClass('sidebar-mini-visible');
-      } else if (windowWidth < 655) {
+      } else if (windowWidth < 810) {
         setAppClass('');
       }
     });
@@ -59,6 +61,10 @@ function App() {
     }
   };
 
+  const closeSidebar = () => {
+    setSidebarOpened(false);
+  };
+
   return (
     <div id="App" className={`${style.app} ${appClass}`}>
       <Content>
@@ -71,9 +77,12 @@ function App() {
           sidebarOpened
             ? {
                 transform: 'translateX(0px)',
+                marginTop: '0px',
               }
             : {}
         }
+        onClose={closeSidebar}
+        isOpened={sidebarOpened}
       />
       <SidebarMini />
     </div>

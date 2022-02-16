@@ -1,4 +1,6 @@
 @use 'src/styles/break-points.scss' as bp;
+@use 'src/styles/colors.scss' as colors;
+@use 'src/styles/spacing.scss' as spacing;
 
 .sidebar {
   position: fixed;
@@ -8,6 +10,18 @@
   margin-top: 56px;
   visibility: hidden;
   transition-duration: 0s;
+}
+
+.button {
+  padding: 0;
+  background-color: transparent;
+}
+
+.header {
+  height: 56px;
+  display: flex;
+  padding: 0 spacing.$padding-large;
+  background-color: colors.$black;
 }
 
 :global(.sidebar-visible) {
@@ -23,4 +37,16 @@
     z-index: 900;
     visibility: visible;
   }
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+  z-index: 0;
+  opacity: 0.6;
+  visibility: hidden;
 }
