@@ -1,5 +1,8 @@
 import Video from '@components/Video';
 import useFetch from '@src/hooks/useFetch';
+import { RootState } from '@store/index';
+import { updateVideo } from '@store/videoSlice';
+import { useDispatch, useSelector } from 'react-redux';
 
 import styles from './Videos.module.scss';
 
@@ -37,11 +40,16 @@ const index = () => {
   const [data] = useFetch<PopularVideoList>({
     url: 'videos?part=snippet&chart=mostPopular&maxResults=25',
   });
+  const dispatch = useDispatch();
+  if (data) {
+    dispatch(updateVideo(data.items));
+  }
+  const videos = useSelector((state: RootState) => state.video.videos);
 
   return (
     <div className={styles.wrapper}>
       <ul className={styles.videos}>
-        {data?.items.map((item) => (
+        {videos.map((item) => (
           <Video key={item.id} {...item} />
         ))}
       </ul>

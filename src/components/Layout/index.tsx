@@ -1,8 +1,9 @@
-import Content from '@components/Content/Content';
 import Header from '@components/Header/Header';
 import Sidebar from '@components/Sidebar';
 
 import { ReactNode, useEffect, useState } from 'react';
+
+import styles from './Layout.module.scss';
 
 type LayoutProps = {
   children: ReactNode;
@@ -78,7 +79,7 @@ const Layout = ({ children, sidebarPersistent = false }: LayoutProps) => {
         isOpened={sidebarOpened}
         persistent={sidebarPersistent}
       />
-      <Content>{children}</Content>
+      <div className={styles.content}>{children}</div>
     </div>
   );
 };

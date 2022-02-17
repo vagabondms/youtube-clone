@@ -1,0 +1,15 @@
+.watch {
+  display: flex;
+  flex-direction: row;
+  @media screen and (max-width: 1000px) {
+    flex-direction: column;
+  }
+}
+
+.player {
+  flex: 1;
+}
+
+.list {
+  flex: 0.2 1 200px;
+}

@@ -4,13 +4,17 @@ import './root.scss';
 import axios from 'axios';
 import { BrowserRouter } from 'react-router-dom';
 import * as serviceWorker from '@src/serviceWorker';
+import { Provider } from 'react-redux';
 
 import App from '@src/App';
+import { store } from './store';
 
 ReactDOM.render(
   <StrictMode>
     <BrowserRouter>
-      <App />
+      <Provider store={store}>
+        <App />
+      </Provider>
     </BrowserRouter>
   </StrictMode>,
   document.getElementById('root'),
