@@ -12,7 +12,7 @@ const index = ({ className }: VideoListProps) => {
   return (
     <div className={className}>
       {videos.map((item) => (
-        <Video direction="row" key={item.id} {...item} />
+        <Video direction="row" key={item.etag} {...item} />
       ))}
     </div>
   );

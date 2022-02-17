@@ -1,5 +1,5 @@
-import { VideoInfo } from '@components/Videos';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { VideoInfo } from '@src/App';
 
 export interface VideoState {
   videos: VideoInfo[];

@@ -2,24 +2,34 @@ import { faMicrophone, faSearch } from '@fortawesome/free-solid-svg-icons';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { updateQuery } from '@store/querySlice';
+
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { RootState } from '@store/index';
 import Icon from './Icon';
 import styles from './search.module.scss';
 
 const Search = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const query = useSelector((state: RootState) => state.query.query);
-
-  // const onSearch = (searchQuery: string) => {};
+  const [inputValue, setInputValue] = useState<string>(query);
 
   const onInput = (e: any) => {
-    dispatch(updateQuery(e.target.value));
+    setInputValue(e.target.value);
   };
 
-  const onClickSearchBtn = () => {};
+  const search = () => {
+    dispatch(updateQuery(inputValue));
+    navigate('/');
+  };
+
+  const onClickSearchBtn = () => {
+    search();
+  };
   const handlePressEnter = (e: any) => {
     if (e.code === 'Enter') {
-      console.log('hi');
+      search();
     }
   };
 
@@ -27,7 +37,7 @@ const Search = () => {
     <div className={styles.search}>
       <input
         type="search"
-        value={query}
+        value={inputValue}
         className={styles.input}
         placeholder="검색"
         onInput={onInput}
