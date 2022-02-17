@@ -1,4 +1,4 @@
-import MenuItem from '@components/SidebarMini/MenuItem';
+import MenuItem from '@components/Sidebar/SidebarMini/MenuItem';
 import { faYoutube } from '@fortawesome/free-brands-svg-icons';
 import {
   faArchive,

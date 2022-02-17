@@ -1,4 +1,4 @@
-import Menu from '@components/SidebarMini/Menu';
+import Menu from '@components/Sidebar/SidebarMini/Menu';
 import style from './SidebarMini.module.scss';
 
 const SidebarMini = () => (

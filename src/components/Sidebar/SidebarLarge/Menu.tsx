@@ -1,5 +1,5 @@
-import MenuItem from '@components/Sidebar/MenuItem';
-import Title from '@components/Sidebar/Title';
+import MenuItem from '@components/Sidebar/SidebarLarge/MenuItem';
+import Title from '@components/Sidebar/SidebarLarge/Title';
 import { faYoutube } from '@fortawesome/free-brands-svg-icons';
 import {
   faArchive,
@@ -25,7 +25,7 @@ import {
   faTrophy,
 } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
-import Spacer from './Spacer';
+import Spacer from '@components/Sidebar/SidebarLarge/Spacer';
 import styles from './menu.module.scss';
 
 const Menu = () => {

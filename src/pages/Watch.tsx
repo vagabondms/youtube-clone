@@ -1,3 +1,4 @@
+import Layout from '@components/Layout';
 import { useSearchParams } from 'react-router-dom';
 
 const Video = () => {
@@ -5,7 +6,7 @@ const Video = () => {
   const id = params.get('id');
 
   return (
-    <div>
+    <Layout>
       <div>
         <iframe
           width="853"
@@ -17,8 +18,7 @@ const Video = () => {
           title="Embedded youtube"
         />
       </div>
-      <div />
-    </div>
+    </Layout>
   );
 };
 
