@@ -9,9 +9,10 @@ import { Provider } from 'react-redux';
 import App from '@src/App';
 import { store } from './store';
 
+console.log(process.env);
 ReactDOM.render(
   <StrictMode>
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter>
       <Provider store={store}>
         <App />
       </Provider>
